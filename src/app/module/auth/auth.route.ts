@@ -12,7 +12,11 @@ router.post(
   validateRequest(UserValidation.PatientRegistrationZodSchema),
   AuthController.registerPatient,
 );
-router.post("/login", AuthController.loginUser);
+router.post(
+  "/login",
+  validateRequest(UserValidation.LoginZodSchema),
+  AuthController.loginUser,
+);
 router.get(
   "/me",
   auth(Role.ADMIN, Role.DOCTOR, Role.PATIENT, Role.SUPER_ADMIN),
