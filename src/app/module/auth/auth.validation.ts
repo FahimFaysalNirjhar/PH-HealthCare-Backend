@@ -30,6 +30,6 @@ const PatientRegistrationZodSchema = z.object({
     .optional(),
 });
 
-export const PatientValidation = {
+export const UserValidation = {
   PatientRegistrationZodSchema,
 };
